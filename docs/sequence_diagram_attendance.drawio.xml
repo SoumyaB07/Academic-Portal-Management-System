@@ -1,0 +1,178 @@
+<mxfile host="app.diagrams.net" modified="2026-10-31T18:42:00.000Z" agent="Antigravity APMS Generator" version="21.0.0" type="device">
+  <diagram id="Seq-Attendance" name="Sequence Diagram 2 - Attendance &amp; Defaulter Workflow">
+    <mxGraphModel dx="1600" dy="1100" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1550" pageHeight="1150" background="#FFFFFF" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Title -->
+        <mxCell id="title" value="&lt;b&gt;SEQUENCE DIAGRAM 2: Faculty Attendance Logging &amp;amp; Student 75% Defaulter Warning Generation&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=15;fontColor=#1D3557;" vertex="1" parent="1">
+          <mxGeometry x="250" y="20" width="950" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- ==================== PARTICIPANTS / LIFELINES ==================== -->
+        <!-- Faculty Actor -->
+        <mxCell id="part_fac" value="Faculty&#xa;(Instructor)" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;fillColor=#F1EAFE;strokeColor=#7654A5;strokeWidth=2;fontColor=#33254C;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="50" y="70" width="110" height="820" as="geometry" />
+        </mxCell>
+
+        <!-- Faculty UI -->
+        <mxCell id="part_fui" value=":FacultyUI&#xa;(js/faculty.js)" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;fillColor=#EAF2FF;strokeColor=#3B6EA8;strokeWidth=2;fontColor=#172B4D;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="260" y="70" width="120" height="820" as="geometry" />
+        </mxCell>
+
+        <!-- API Client -->
+        <mxCell id="part_api" value=":APIClient&#xa;(js/api.js)" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;fillColor=#EEF4FF;strokeColor=#4D72B0;strokeWidth=2;fontColor=#1D3557;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="480" y="70" width="120" height="820" as="geometry" />
+        </mxCell>
+
+        <!-- Backend Controller -->
+        <mxCell id="part_srv" value=":ExpressBackend&#xa;(routes/attendance)" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;fillColor=#FFF1DE;strokeColor=#C47B20;strokeWidth=2;fontColor=#59370D;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="700" y="70" width="140" height="820" as="geometry" />
+        </mxCell>
+
+        <!-- MySQL Database -->
+        <mxCell id="part_db" value=":MySQL Database&#xa;(academic_portal_db)" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;fillColor=#E7F8FB;strokeColor=#3296A8;strokeWidth=2;fontColor=#16434B;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="940" y="70" width="150" height="820" as="geometry" />
+        </mxCell>
+
+        <!-- Student UI -->
+        <mxCell id="part_sui" value=":StudentUI&#xa;(js/student.js)" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;fillColor=#E8F7F2;strokeColor=#2F8F73;strokeWidth=2;fontColor=#173F36;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1190" y="70" width="120" height="820" as="geometry" />
+        </mxCell>
+
+        <!-- Student Actor -->
+        <mxCell id="part_stud" value="Student&#xa;(User)" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;fillColor=#ECF8E9;strokeColor=#5D963A;strokeWidth=2;fontColor=#29421B;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1400" y="70" width="110" height="820" as="geometry" />
+        </mxCell>
+
+        <!-- ==================== PHASE 1: FACULTY MARKS ATTENDANCE ==================== -->
+        <!-- Note 1 -->
+        <mxCell id="note_phase1" value="PHASE 1: Faculty logs lecture attendance roster" style="shape=note;whiteSpace=wrap;html=1;size=14;verticalAlign=middle;align=center;fillColor=#FFF9E6;strokeColor=#D4AC0D;fontSize=10;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="130" width="230" height="35" as="geometry" />
+        </mxCell>
+
+        <mxCell id="msg_1" value="1. Selects Course (CS501) &amp;amp; Session Date" style="html=1;verticalAlign=bottom;endArrow=block;strokeColor=#33254C;strokeWidth=1.5;fontSize=11;" edge="1" parent="1" source="part_fac" target="part_fui">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="180" y="180" /></Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="msg_2" value="2. Marks Students Present/Absent &amp;amp; clicks &quot;Save Attendance&quot;" style="html=1;verticalAlign=bottom;endArrow=block;strokeColor=#33254C;strokeWidth=1.5;fontSize=11;" edge="1" parent="1" source="part_fac" target="part_fui">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="180" y="215" /></Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="msg_3" value="3. saveAttendance(recordsArray)" style="html=1;verticalAlign=bottom;endArrow=block;strokeColor=#3B6EA8;strokeWidth=1.5;fontSize=11;" edge="1" parent="1" source="part_fui" target="part_api">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="400" y="245" /></Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="msg_4" value="4. POST /api/attendance/save { records: [...] }" style="html=1;verticalAlign=bottom;endArrow=block;strokeColor=#4D72B0;strokeWidth=1.5;fontSize=11;" edge="1" parent="1" source="part_api" target="part_srv">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="620" y="275" /></Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="msg_5" value="5. Batch UPSERT into attendance (enrollment_id, session_date, status)" style="html=1;verticalAlign=bottom;endArrow=block;strokeColor=#C47B20;strokeWidth=1.5;fontSize=11;" edge="1" parent="1" source="part_srv" target="part_db">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="850" y="305" /></Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="msg_6" value="6. Rows committed (Transaction successful)" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;strokeColor=#3296A8;strokeWidth=1.5;fontSize=11;" edge="1" parent="1" source="part_db" target="part_srv">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="850" y="335" /></Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="msg_7" value="7. HTTP 200 OK { success: true, count: N }" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;strokeColor=#C47B20;strokeWidth=1.5;fontSize=11;" edge="1" parent="1" source="part_srv" target="part_api">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="620" y="365" /></Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="msg_8" value="8. Displays Green Toast: &quot;Attendance Saved!&quot;" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;strokeColor=#3B6EA8;strokeWidth=1.5;fontSize=11;" edge="1" parent="1" source="part_fui" target="part_fac">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="180" y="395" /></Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ==================== PHASE 2: STUDENT PORTAL DEFAULTER AUDIT ==================== -->
+        <!-- Note 2 -->
+        <mxCell id="note_phase2" value="PHASE 2: Student logs in &amp;amp; system computes 75% Defaulter Rule" style="shape=note;whiteSpace=wrap;html=1;size=14;verticalAlign=middle;align=center;fillColor=#E8F8F5;strokeColor=#1ABC9C;fontSize=10;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="420" width="350" height="35" as="geometry" />
+        </mxCell>
+
+        <mxCell id="msg_9" value="9. Opens Dashboard &amp;amp; navigates to Attendance Tracker" style="html=1;verticalAlign=bottom;endArrow=block;strokeColor=#173F36;strokeWidth=1.5;fontSize=11;" edge="1" parent="1" source="part_stud" target="part_sui">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="1340" y="470" /></Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="msg_10" value="10. GET /api/attendance &amp;amp; /api/enrollments" style="html=1;verticalAlign=bottom;endArrow=block;strokeColor=#2F8F73;strokeWidth=1.5;fontSize=11;" edge="1" parent="1" source="part_sui" target="part_srv">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="1000" y="500" /></Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="msg_11" value="11. SELECT * FROM attendance WHERE enrollment_id = ?" style="html=1;verticalAlign=bottom;endArrow=block;strokeColor=#C47B20;strokeWidth=1.5;fontSize=11;" edge="1" parent="1" source="part_srv" target="part_db">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="850" y="530" /></Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="msg_12" value="12. Returns session logs (e.g. Total: 20, Attended: 14)" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;strokeColor=#3296A8;strokeWidth=1.5;fontSize=11;" edge="1" parent="1" source="part_db" target="part_srv">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="850" y="560" /></Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="msg_13" value="13. Returns attendance dataset payload" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;strokeColor=#2F8F73;strokeWidth=1.5;fontSize=11;" edge="1" parent="1" source="part_srv" target="part_sui">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="1000" y="590" /></Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="msg_14" value="14. calculateAttendanceStats() -&gt; pct = (14/20)*100 = 70%" style="html=1;verticalAlign=bottom;endArrow=block;strokeColor=#2F8F73;strokeWidth=1.5;fontSize=11;" edge="1" parent="1" source="part_sui" target="part_sui">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="1270" y="615" /><mxPoint x="1290" y="635" /><mxPoint x="1250" y="635" /></Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ==================== ALT FRAME: 75% RULE ==================== -->
+        <mxCell id="alt_att_frame" value="alt" style="shape=umlFrame;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#C0392B;strokeWidth=2;fontSize=12;fontStyle=1;fontColor=#C0392B;" vertex="1" parent="1">
+          <mxGeometry x="1150" y="650" width="380" height="200" as="geometry" />
+        </mxCell>
+
+        <mxCell id="alt_label_1" value="[ pct &lt; 75% ] -- Attendance Defaulter" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontStyle=1;fontColor=#C0392B;" vertex="1" parent="1">
+          <mxGeometry x="1200" y="655" width="240" height="20" as="geometry" />
+        </mxCell>
+
+        <mxCell id="msg_alt1" value="15a. Renders RED Defaulter Badge (70%)&#xa;&amp;amp; displays Warning: &quot;Barred from Examination&quot;" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;strokeColor=#C0392B;strokeWidth=1.5;fontSize=11;" edge="1" parent="1" source="part_sui" target="part_stud">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="1340" y="695" /></Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Divider -->
+        <mxCell id="alt_att_divider" value="" style="line;strokeWidth=1.5;dashed=1;strokeColor=#27AE60;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1150" y="730" width="380" height="10" as="geometry" />
+        </mxCell>
+
+        <mxCell id="alt_label_2" value="[ pct &gt;= 75% ] -- Eligible" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontStyle=1;fontColor=#27AE60;" vertex="1" parent="1">
+          <mxGeometry x="1200" y="740" width="200" height="20" as="geometry" />
+        </mxCell>
+
+        <mxCell id="msg_alt2" value="15b. Renders GREEN Safe Badge&#xa;&amp;amp; displays Status: &quot;Eligible for Exams&quot;" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;strokeColor=#27AE60;strokeWidth=1.5;fontSize=11;" edge="1" parent="1" source="part_sui" target="part_stud">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="1340" y="790" /></Array>
+          </mxGeometry>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

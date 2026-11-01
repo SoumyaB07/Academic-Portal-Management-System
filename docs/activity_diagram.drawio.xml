@@ -1,0 +1,293 @@
+<mxfile host="app.diagrams.net" modified="2026-10-31T18:45:00.000Z" agent="Antigravity APMS Generator" version="21.0.0" type="device">
+  <diagram id="Activity-APMS" name="Activity Diagram - Academic Evaluation Lifecycle">
+    <mxGraphModel dx="1600" dy="1200" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1400" background="#FFFFFF" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Title -->
+        <mxCell id="title" value="&lt;b&gt;UML ACTIVITY DIAGRAM: Academic Semester Lifecycle, Credit Validation &amp;amp; Assessment Workflow&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=15;fontColor=#1D3557;" vertex="1" parent="1">
+          <mxGeometry x="300" y="20" width="1000" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- ==================== SWIMLANES (PARTITIONS) ==================== -->
+        <!-- Student Swimlane -->
+        <mxCell id="lane_student" value="&lt;b&gt;STUDENT&lt;/b&gt;" style="swimlane;whiteSpace=wrap;html=1;startSize=35;fillColor=#E8F7F2;strokeColor=#2F8F73;strokeWidth=2;fontColor=#173F36;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="70" width="460" height="1260" as="geometry" />
+        </mxCell>
+
+        <!-- Academic Portal Swimlane -->
+        <mxCell id="lane_portal" value="&lt;b&gt;ACADEMIC PORTAL &amp;amp; SYSTEM ENGINE&lt;/b&gt;" style="swimlane;whiteSpace=wrap;html=1;startSize=35;fillColor=#EAF2FF;strokeColor=#3B6EA8;strokeWidth=2;fontColor=#172B4D;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="540" y="70" width="520" height="1260" as="geometry" />
+        </mxCell>
+
+        <!-- Faculty Swimlane -->
+        <mxCell id="lane_faculty" value="&lt;b&gt;FACULTY / INSTRUCTOR&lt;/b&gt;" style="swimlane;whiteSpace=wrap;html=1;startSize=35;fillColor=#F1EAFE;strokeColor=#7654A5;strokeWidth=2;fontColor=#33254C;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1060" y="70" width="460" height="1260" as="geometry" />
+        </mxCell>
+
+        <!-- ==================== STUDENT ACTIONS ==================== -->
+        <!-- Initial Node -->
+        <mxCell id="init_node" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#173F36;strokeColor=#173F36;" vertex="1" parent="lane_student">
+          <mxGeometry x="210" y="60" width="30" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Action 1: Select Courses -->
+        <mxCell id="act_select_courses" value="Browse Offered Courses &amp;amp;&#xa;Select Courses for Term" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#FFFFFF;strokeColor=#2F8F73;strokeWidth=1.5;fontSize=11;fontStyle=1;" vertex="1" parent="lane_student">
+          <mxGeometry x="145" y="120" width="160" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Action 2: Attend Lectures -->
+        <mxCell id="act_attend_classes" value="Attend Regular Lectures &amp;amp;&#xa;Practical Lab Sessions" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#FFFFFF;strokeColor=#2F8F73;strokeWidth=1.5;fontSize=11;" vertex="1" parent="lane_student">
+          <mxGeometry x="60" y="450" width="160" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Action 3: Take CIE Tests -->
+        <mxCell id="act_take_cie" value="Complete Continuous Internal&#xa;Evaluation (Tests &amp;amp; Midterms)" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#FFFFFF;strokeColor=#2F8F73;strokeWidth=1.5;fontSize=11;" vertex="1" parent="lane_student">
+          <mxGeometry x="245" y="450" width="175" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Action 4: Track Attendance -->
+        <mxCell id="act_track_att" value="Review Personal Attendance &amp;amp;&#xa;Credit Load in Portal" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#FFFFFF;strokeColor=#2F8F73;strokeWidth=1.5;fontSize=11;" vertex="1" parent="lane_student">
+          <mxGeometry x="145" y="550" width="160" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Action 5: Appear for Final Exam -->
+        <mxCell id="act_final_exam" value="Appear for End-Semester&#xa;Final Examination (50 Marks)" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#FFFFFF;strokeColor=#2F8F73;strokeWidth=1.5;fontSize=11;" vertex="1" parent="lane_student">
+          <mxGeometry x="145" y="850" width="165" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Action 6: View & Download Grade Card -->
+        <mxCell id="act_view_result" value="View Consolidated Marksheet &amp;amp;&#xa;Print Grade Report (SGPA)" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#FFFFFF;strokeColor=#2F8F73;strokeWidth=1.5;fontSize=11;fontStyle=1;" vertex="1" parent="lane_student">
+          <mxGeometry x="145" y="1130" width="170" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Final Node -->
+        <mxCell id="final_node" value="" style="ellipse;html=1;shape=endState;fillColor=#173F36;strokeColor=#2F8F73;strokeWidth=2;" vertex="1" parent="lane_student">
+          <mxGeometry x="215" y="1210" width="30" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- ==================== SYSTEM / PORTAL ACTIONS ==================== -->
+        <!-- Action: Validate Credits -->
+        <mxCell id="act_val_credits" value="Audit Proposed Credit Load&#xa;Against 24-Credit Ceiling" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#FFFFFF;strokeColor=#3B6EA8;strokeWidth=1.5;fontSize=11;fontStyle=1;" vertex="1" parent="lane_portal">
+          <mxGeometry x="170" y="120" width="180" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Decision 1: Credits <= 24 -->
+        <mxCell id="dec_credits" value="Credits &lt;= 24?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF1DE;strokeColor=#C47B20;strokeWidth=1.5;fontSize=10;fontStyle=1;" vertex="1" parent="lane_portal">
+          <mxGeometry x="205" y="200" width="110" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Action: Reject Credit Overflow -->
+        <mxCell id="act_reject_credits" value="Display Red Error Toast:&#xa;'Credit Limit Exceeded (&gt;24)'" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#FDECEC;strokeColor=#C45A5A;strokeWidth=1.5;fontSize=10;fontColor=#542323;" vertex="1" parent="lane_portal">
+          <mxGeometry x="20" y="205" width="150" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Action: Confirm Enrollment -->
+        <mxCell id="act_confirm_enr" value="Commit Course Enrollment&#xa;into MySQL Database" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#E8F7F2;strokeColor=#2F8F73;strokeWidth=1.5;fontSize=11;fontStyle=1;" vertex="1" parent="lane_portal">
+          <mxGeometry x="175" y="295" width="170" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Fork 1 (Start Concurrent Term Work) -->
+        <mxCell id="fork_term" value="" style="line;strokeWidth=5;strokeColor=#172B4D;html=1;" vertex="1" parent="lane_portal">
+          <mxGeometry x="70" y="380" width="380" height="10" as="geometry" />
+        </mxCell>
+
+        <!-- Join 1 (End of Teaching Term) -->
+        <mxCell id="join_term" value="" style="line;strokeWidth=5;strokeColor=#172B4D;html=1;" vertex="1" parent="lane_portal">
+          <mxGeometry x="70" y="650" width="380" height="10" as="geometry" />
+        </mxCell>
+
+        <!-- Action: Compute Attendance % -->
+        <mxCell id="act_compute_att" value="Compute Aggregate Attendance %&#xa;= (Attended / Total) * 100" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#FFFFFF;strokeColor=#3B6EA8;strokeWidth=1.5;fontSize=11;fontStyle=1;" vertex="1" parent="lane_portal">
+          <mxGeometry x="170" y="685" width="180" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Decision 2: 75% Attendance Rule -->
+        <mxCell id="dec_att" value="Attendance&#xa;&gt;= 75%?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF1DE;strokeColor=#C47B20;strokeWidth=1.5;fontSize=10;fontStyle=1;" vertex="1" parent="lane_portal">
+          <mxGeometry x="205" y="765" width="110" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Action: Defaulter Alert & Fail -->
+        <mxCell id="act_defaulter_fail" value="Mark Attendance Defaulter!&#xa;Bar from End-Sem Exam &amp;amp;&#xa;Assign Grade 'F' (GPA 0.0)" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#FDECEC;strokeColor=#C45A5A;strokeWidth=1.5;fontSize=10;fontColor=#542323;fontStyle=1;" vertex="1" parent="lane_portal">
+          <mxGeometry x="20" y="765" width="160" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Action: Compute Final Total & Grade Letter -->
+        <mxCell id="act_compute_grade" value="Calculate Total Marks (0-100)&#xa;= Internal(30) + Mid(20) + Final(50)&#xa;Evaluate Letter Grade &amp;amp; GPA" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#FFFFFF;strokeColor=#3B6EA8;strokeWidth=1.5;fontSize=11;fontStyle=1;" vertex="1" parent="lane_portal">
+          <mxGeometry x="165" y="940" width="190" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Merge Node -->
+        <mxCell id="merge_results" value="" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF1DE;strokeColor=#C47B20;strokeWidth=1.5;" vertex="1" parent="lane_portal">
+          <mxGeometry x="240" y="1035" width="40" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Action: Save to MySQL & Compute SGPA -->
+        <mxCell id="act_save_mysql" value="Persist into MySQL 'grades' Table&#xa;&amp;amp; Calculate Semester SGPA" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#ECF8E9;strokeColor=#5D963A;strokeWidth=1.5;fontSize=11;fontStyle=1;" vertex="1" parent="lane_portal">
+          <mxGeometry x="170" y="1105" width="180" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- ==================== FACULTY ACTIONS ==================== -->
+        <!-- Action: Record Daily Attendance -->
+        <mxCell id="act_fac_att" value="Conduct Lectures &amp;amp; Submit Daily&#xa;Attendance Roster (Present/Absent)" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#FFFFFF;strokeColor=#7654A5;strokeWidth=1.5;fontSize=11;" vertex="1" parent="lane_faculty">
+          <mxGeometry x="135" y="420" width="190" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Action: Enter CIE Marks -->
+        <mxCell id="act_fac_cie" value="Evaluate Continuous Internal Marks&#xa;(Internal Max 30, Midterm Max 20)" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#FFFFFF;strokeColor=#7654A5;strokeWidth=1.5;fontSize=11;" vertex="1" parent="lane_faculty">
+          <mxGeometry x="135" y="500" width="195" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Action: Grade Final Examination -->
+        <mxCell id="act_fac_final" value="Grade End-Semester Examination&#xa;Answer Sheets (Max 50 Marks)" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#FFFFFF;strokeColor=#7654A5;strokeWidth=1.5;fontSize=11;" vertex="1" parent="lane_faculty">
+          <mxGeometry x="135" y="850" width="190" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- ==================== CONTROL FLOW CONNECTORS ==================== -->
+        <!-- Start -> Select -->
+        <mxCell id="flow_1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.5;strokeColor=#173F36;endArrow=block;" edge="1" parent="1" source="init_node" target="act_select_courses">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Select -> Validate -->
+        <mxCell id="flow_2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.5;strokeColor=#172B4D;endArrow=block;" edge="1" parent="1" source="act_select_courses" target="act_val_credits">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Validate -> Decision Credits -->
+        <mxCell id="flow_3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.5;strokeColor=#172B4D;endArrow=block;" edge="1" parent="1" source="act_val_credits" target="dec_credits">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Decision Credits [>24] -> Reject -->
+        <mxCell id="flow_4a" value="[Credits &gt; 24]" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.5;strokeColor=#C45A5A;endArrow=block;fontColor=#C45A5A;fontSize=10;fontStyle=1;" edge="1" parent="1" source="dec_credits" target="act_reject_credits">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Reject -> Loop back to Select -->
+        <mxCell id="flow_4b" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.5;strokeColor=#C45A5A;endArrow=block;dashed=1;" edge="1" parent="1" source="act_reject_credits" target="act_select_courses">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="450" y="300" /><mxPoint x="305" y="300" /></Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Decision Credits [<=24] -> Confirm -->
+        <mxCell id="flow_5" value="[Credits &lt;= 24]" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.5;strokeColor=#2F8F73;endArrow=block;fontColor=#2F8F73;fontSize=10;fontStyle=1;" edge="1" parent="1" source="dec_credits" target="act_confirm_enr">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Confirm -> Fork -->
+        <mxCell id="flow_6" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.5;strokeColor=#172B4D;endArrow=block;" edge="1" parent="1" source="act_confirm_enr" target="fork_term">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Fork -> Student Attend & CIE -->
+        <mxCell id="flow_fork_s1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.5;strokeColor=#2F8F73;endArrow=block;" edge="1" parent="1" source="fork_term" target="act_attend_classes">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="680" y="475" /></Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="flow_fork_s2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.5;strokeColor=#2F8F73;endArrow=block;" edge="1" parent="1" source="fork_term" target="act_take_cie">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="750" y="475" /></Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Attend -> Track -->
+        <mxCell id="flow_att_track" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.5;strokeColor=#2F8F73;endArrow=block;" edge="1" parent="1" source="act_attend_classes" target="act_track_att">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Fork -> Faculty Att & CIE -->
+        <mxCell id="flow_fork_f1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.5;strokeColor=#7654A5;endArrow=block;" edge="1" parent="1" source="fork_term" target="act_fac_att">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="880" y="445" /></Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="flow_fork_f2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.5;strokeColor=#7654A5;endArrow=block;" edge="1" parent="1" source="fork_term" target="act_fac_cie">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="940" y="525" /></Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Converge to Join -->
+        <mxCell id="flow_join_1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.5;strokeColor=#2F8F73;endArrow=block;" edge="1" parent="1" source="act_track_att" target="join_term">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="305" y="690" /><mxPoint x="680" y="690" /></Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="flow_join_2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.5;strokeColor=#7654A5;endArrow=block;" edge="1" parent="1" source="act_fac_cie" target="join_term">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="1290" y="690" /><mxPoint x="880" y="690" /></Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Join -> Compute Attendance -->
+        <mxCell id="flow_join_comp" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.5;strokeColor=#172B4D;endArrow=block;" edge="1" parent="1" source="join_term" target="act_compute_att">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Compute Att -> Decision 2 -->
+        <mxCell id="flow_dec_att" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.5;strokeColor=#172B4D;endArrow=block;" edge="1" parent="1" source="act_compute_att" target="dec_att">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Decision 2 [<75%] -> Defaulter Fail -->
+        <mxCell id="flow_att_fail" value="[Att &lt; 75%]" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.5;strokeColor=#C45A5A;endArrow=block;fontColor=#C45A5A;fontSize=10;fontStyle=1;" edge="1" parent="1" source="dec_att" target="act_defaulter_fail">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Defaulter Fail -> Merge -->
+        <mxCell id="flow_fail_merge" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.5;strokeColor=#C45A5A;endArrow=block;" edge="1" parent="1" source="act_defaulter_fail" target="merge_results">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="640" y="1125" /></Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Decision 2 [>=75%] -> Student Final Exam -->
+        <mxCell id="flow_att_pass" value="[Att &gt;= 75% Eligible]" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.5;strokeColor=#2F8F73;endArrow=block;fontColor=#2F8F73;fontSize=10;fontStyle=1;" edge="1" parent="1" source="dec_att" target="act_final_exam">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="800" y="945" /></Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Student Exam -> Faculty Grade Final -->
+        <mxCell id="flow_exam_grade" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.5;strokeColor=#172B4D;endArrow=block;" edge="1" parent="1" source="act_final_exam" target="act_fac_final">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Faculty Grade -> Compute Final Total -->
+        <mxCell id="flow_grade_total" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.5;strokeColor=#7654A5;endArrow=block;" edge="1" parent="1" source="act_fac_final" target="act_compute_grade">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="1290" y="1040" /></Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Compute Final -> Merge -->
+        <mxCell id="flow_total_merge" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.5;strokeColor=#172B4D;endArrow=block;" edge="1" parent="1" source="act_compute_grade" target="merge_results">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Merge -> Save MySQL -->
+        <mxCell id="flow_merge_save" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.5;strokeColor=#172B4D;endArrow=block;" edge="1" parent="1" source="merge_results" target="act_save_mysql">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Save MySQL -> Student View Marksheet -->
+        <mxCell id="flow_save_view" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.5;strokeColor=#2F8F73;endArrow=block;" edge="1" parent="1" source="act_save_mysql" target="act_view_result">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- View Result -> Final Node -->
+        <mxCell id="flow_final" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.5;strokeColor=#173F36;endArrow=block;" edge="1" parent="1" source="act_view_result" target="final_node">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

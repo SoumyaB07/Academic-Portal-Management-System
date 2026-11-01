@@ -1,0 +1,85 @@
+<mxfile host="app.diagrams.net" modified="2026-10-31T19:05:00.000Z" agent="Antigravity APMS" version="21.0.0" type="device">
+  <diagram id="Deploy-APMS" name="Deployment Diagram - Academic Portal Management System">
+    <mxGraphModel dx="1400" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="650" background="#FFFFFF" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Outer Boundary Container Card -->
+        <mxCell id="card_bg_dep" value="" style="rounded=1;arcSize=3;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;strokeWidth=3;" vertex="1" parent="1">
+          <mxGeometry x="20" y="20" width="1020" height="540" as="geometry" />
+        </mxCell>
+
+        <!-- Diagram Title (Centered at Top) -->
+        <mxCell id="diag_title_dep" value="&lt;b&gt;Deployment Diagram: Academic Portal Management System&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=14;fontFamily=Helvetica;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="260" y="32" width="540" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- ==================== NODE 1: CLIENT DEVICE ==================== -->
+        <mxCell id="node_client" value="Client Device&#xa;(Student/Faculty/Admin's&#xa;Laptop)" style="shape=cube;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;darkOpacity=0.04;darkOpacity2=0.08;size=20;fillColor=#FFFFFF;strokeColor=#000000;strokeWidth=1.5;fontColor=#000000;fontSize=11;fontStyle=1;align=center;verticalAlign=top;spacingTop=26;" vertex="1" parent="1">
+          <mxGeometry x="60" y="145" width="220" height="250" as="geometry" />
+        </mxCell>
+
+        <!-- Component Inside Node 1: Web Browser -->
+        <mxCell id="comp_browser" value="Web Browser" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;strokeWidth=1.5;fontColor=#000000;fontSize=12;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="node_client">
+          <mxGeometry x="25" y="115" width="165" height="90" as="geometry" />
+        </mxCell>
+        <!-- Component Icon Glyph (Top-Right) -->
+        <mxCell id="icon_browser" value="" style="shape=module;jettySize=auto;orthogonalLoop=1;strokeColor=#000000;fillColor=#FFFFFF;strokeWidth=1;" vertex="1" parent="comp_browser">
+          <mxGeometry x="1" y="0" width="20" height="16" relative="1" as="geometry">
+            <mxPoint x="-26" y="8" as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ==================== NODE 2: APPLICATION SERVER ==================== -->
+        <mxCell id="node_app" value="Application Server" style="shape=cube;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;darkOpacity=0.04;darkOpacity2=0.08;size=20;fillColor=#FFFFFF;strokeColor=#000000;strokeWidth=1.5;fontColor=#000000;fontSize=11;fontStyle=1;align=center;verticalAlign=top;spacingTop=26;" vertex="1" parent="1">
+          <mxGeometry x="400" y="145" width="230" height="250" as="geometry" />
+        </mxCell>
+
+        <!-- Component Inside Node 2: Web App -->
+        <mxCell id="comp_webapp" value="Academic Portal&#xa;Management&#xa;Web App" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;strokeWidth=1.5;fontColor=#000000;fontSize=11;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="node_app">
+          <mxGeometry x="30" y="115" width="165" height="90" as="geometry" />
+        </mxCell>
+        <!-- Component Icon Glyph (Top-Right) -->
+        <mxCell id="icon_webapp" value="" style="shape=module;jettySize=auto;orthogonalLoop=1;strokeColor=#000000;fillColor=#FFFFFF;strokeWidth=1;" vertex="1" parent="comp_webapp">
+          <mxGeometry x="1" y="0" width="20" height="16" relative="1" as="geometry">
+            <mxPoint x="-26" y="8" as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ==================== NODE 3: DATABASE SERVER ==================== -->
+        <mxCell id="node_db" value="Database Server" style="shape=cube;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;darkOpacity=0.04;darkOpacity2=0.08;size=20;fillColor=#FFFFFF;strokeColor=#000000;strokeWidth=1.5;fontColor=#000000;fontSize=11;fontStyle=1;align=center;verticalAlign=top;spacingTop=26;" vertex="1" parent="1">
+          <mxGeometry x="740" y="145" width="230" height="250" as="geometry" />
+        </mxCell>
+
+        <!-- Sub-box inside Node 3: MySQL DBMS -->
+        <mxCell id="box_dbms" value="MySQL DBMS" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;strokeWidth=1.5;fontColor=#000000;fontSize=11;fontStyle=1;align=center;verticalAlign=top;spacingTop=8;" vertex="1" parent="node_db">
+          <mxGeometry x="25" y="80" width="175" height="145" as="geometry" />
+        </mxCell>
+
+        <!-- Cylinder Database inside DBMS Box -->
+        <mxCell id="cyl_db" value="AcademicPortalDB" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=12;fillColor=#FFFFFF;strokeColor=#000000;strokeWidth=1.5;fontColor=#000000;fontSize=10;fontStyle=1;" vertex="1" parent="box_dbms">
+          <mxGeometry x="27" y="45" width="120" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- ==================== NETWORK CONNECTIONS ==================== -->
+        <!-- Connection 1: Client -> Application Server (HTTP/HTTPS) -->
+        <mxCell id="conn_http" value="&amp;lt;&amp;lt;HTTP/HTTPS&amp;gt;&amp;gt;" style="edgeStyle=none;html=1;strokeColor=#000000;strokeWidth=1.5;endArrow=none;fontSize=11;fontStyle=1;verticalAlign=bottom;align=center;" edge="1" parent="1" source="node_client" target="node_app">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="280" y="270" as="sourcePoint" />
+            <mxPoint x="400" y="270" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Connection 2: Application Server -> Database Server (TCP/IP JDBC/MySQL) -->
+        <mxCell id="conn_tcp" value="&amp;lt;&amp;lt;TCP/IP (MySQL)&amp;gt;&amp;gt;" style="edgeStyle=none;html=1;strokeColor=#000000;strokeWidth=1.5;endArrow=none;fontSize=11;fontStyle=1;verticalAlign=bottom;align=center;" edge="1" parent="1" source="node_app" target="node_db">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="630" y="270" as="sourcePoint" />
+            <mxPoint x="740" y="270" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
